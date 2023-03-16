@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		button {
+			padding: 1%;
+			margin: 1%;
+			background-color: peachpuff;
+			font-size: 1rem;
+			font-weight: bolder;
+		}
+	</style>
+</head>
+
+<body>
+	<center style="margin-top:20vh">
+
+	    <div>
+	<h1 id="output1" style="display:inline-block"></h1>
+			
+	<h1 id="output2" style="display:inline-block"></h1>
+		</div>
+		<button id="p1" onclick="player1()">player-1</button><button id="p2" onclick="player2()">player-2</button>
+	</center>
+
+	<script type="text/javascript">
+
+	function player1() {
+
+	   var randomnumber = Math.floor((Math.random() * 6) + 1)
+			console.log(randomnumber)
+
+	 	document.getElementById("output1").innerHTML = randomnumber
+		}
+
+		function player2() {
+
+			var randomnumber = Math.floor((Math.random() * 6) + 1)
+			console.log(randomnumber)
+
+			document.getElementById("output2").innerHTML = randomnumber;
+
+			let player1value = +(document.getElementById("output1").innerHTML);
+			let player2value = +(document.getElementById("output2").innerHTML);
+
+
+			let result;
+
+			if (player2value > player1value) {
+				result = 'Player 2 Wins'
+			}
+			else if (player2value == player1value) {
+				result = "Draw"
+			}
+			else {
+				result = 'Player 1 Wins'
+			}
+
+			setTimeout(() =>{
+				alert(result);
+
+				document.getElementById("output2").innerHTML = '';
+				document.getElementById("output1").innerHTML = '';
+			})
+		}
+
+	</script>
+</body>
+
+</html>
