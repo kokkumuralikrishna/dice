@@ -25,28 +25,31 @@
 	<h1 id="output2" style="display:inline-block"></h1>
 		</div>
 		<button id="p1" onclick="player1()">player-1</button><button id="p2" onclick="player2()">player-2</button>
+		<div>
+			<img id="d1" width="10%">
+		</div>
 	</center>
 
 	<script type="text/javascript">
 
 	function player1() {
 
-	   var randomnumber = Math.floor((Math.random() * 6) + 1)
-			console.log(randomnumber)
+	   var randomNumber = Math.floor((Math.random() * 6) + 1)
+			console.log(randomNumber)
 
-	 	document.getElementById("output1").innerHTML = randomnumber
+	 	document.getElementById("output1").innerHTML = randomNumber
+	 	diceImg(randomNumber)
 		}
 
 		function player2() {
 
-			var randomnumber = Math.floor((Math.random() * 6) + 1)
-			console.log(randomnumber)
+			var randomNumber = Math.floor((Math.random() * 6) + 1)
+			console.log(randomNumber)
 
-			document.getElementById("output2").innerHTML = randomnumber;
+			document.getElementById("output2").innerHTML = randomNumber;
 
 			let player1value = +(document.getElementById("output1").innerHTML);
 			let player2value = +(document.getElementById("output2").innerHTML);
-
 
 			let result;
 
@@ -66,8 +69,29 @@
 				document.getElementById("output2").innerHTML = '';
 				document.getElementById("output1").innerHTML = '';
 			})
+			diceImg(randomNumber)
 		}
-
+		function diceImg(randomNumber){
+			var dice=document.getElementById("d1")
+			if(randomNumber==1){
+			dice.setAttribute('src','1.jpg')
+			}
+			else if(randomNumber==2){
+			dice.setAttribute('src','2.jpg')
+			}
+			else if(randomNumber==3){
+			dice.setAttribute('src','3.jpg')
+			}
+			else if(randomNumber==4){
+			dice.setAttribute('src','4.jpg')
+			}
+			else if(randomNumber==5){
+			dice.setAttribute('src','5.jpg')
+			}
+			else{
+			dice.setAttribute('src','6.jpg')
+			}
+		}
 	</script>
 </body>
 
